@@ -1,19 +1,11 @@
-# Paramount
+# Grub
 
-A minimal colorscheme for Vim that only puts emphasis on the paramount.
-
-## Screenshots
-
-*Fira Code* font on light and dark backgrounds, with Ruby code from
-[VimColors](vimcolors.com/438/paramount/dark):
-
-![](screenshots/light.png)
-![](screenshots/dark.png)
+A minimal gruvbox-based colorscheme for Vim.
 
 ## Installation
 
 Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
+manager like [Plug][] or [Vundle][] and add `"shiztev/vim-grub"`
 as a plugin.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
@@ -22,15 +14,17 @@ as a plugin.
 ## Usage
 
 ```
-:colorscheme paramount
+:colorscheme grub
 ```
 
 Supports both `background=light` and `background=dark`.
 
 ## Credits
 
+Forked from [paramount][].
 Based on the [pencil][] and [off][] colorschemes.
 
+[paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pencil]: https://github.com/reedes/vim-colors-pencil
 [off]: https://github.com/reedes/vim-colors-off
 
