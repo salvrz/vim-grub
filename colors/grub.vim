@@ -1,14 +1,12 @@
-" Name:       paramount.vim
+" Name:       grub.vim
 " Version:    0.1.0
-" Maintainer: github.com/owickstrom
+" Maintainer: github.com/shiztev
 " License:    The MIT License (MIT)
 "
-" A minimal colorscheme for Vim that only puts emphasis on the paramount.
+" A minimal gruvbox-based colorscheme for Vim.
 "
-" Based on the pencil and off colorschemes:
-"
-" https://github.com/reedes/vim-colors-pencil
-" https://github.com/reedes/vim-colors-off
+" Forked from paramount:
+" https://github.com/owickstrom/vim-colors-paramount
 "
 """
 hi clear
@@ -17,35 +15,37 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='paramount'
+let g:colors_name='grub'
 
-let s:black           = { "gui": "#000000", "cterm": "232" }
+let s:black           = { "gui": "#0D0D0D", "cterm": "232" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
-let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
-let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
-let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
+let s:cream           = { "gui": "#EBDBB2", "cterm": "8"   }
+let s:actual_white    = { "gui": "#EBDBB2", "cterm": "8"   }
+let s:subtle_black    = { "gui": "#121212", "cterm": "233" }
 let s:light_black     = { "gui": "#262626", "cterm": "235" }
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
 let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
-let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
-let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
-let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
-let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
-let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
-let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
-let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
-let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
-let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
+let s:dark_pink       = { "gui": "#ff5f87", "cterm": "204" }
+let s:light_pink      = { "gui": "#d75f87", "cterm": "168" }
+let s:dark_red        = { "gui": "#CC241D", "cterm": "1"   }
+let s:light_red       = { "gui": "#FB4934", "cterm": "1"   }
+let s:orange          = { "gui": "#FE8019", "cterm": "167" }
+let s:darker_blue     = { "gui": "#076678", "cterm": "18"  }
+let s:dark_blue       = { "gui": "#076678", "cterm": "32"  }
+let s:blue            = { "gui": "#458588", "cterm": "12"  }
+let s:light_blue      = { "gui": "#83A598", "cterm": "153" }
+let s:dark_cyan       = { "gui": "#689D6A", "cterm": "6"   }
+let s:light_cyan      = { "gui": "#427B58", "cterm": "14"  }
+let s:dark_green      = { "gui": "#98971A", "cterm": "2"   }
+let s:light_green     = { "gui": "#98971A", "cterm": "10"  }
+let s:deep_purple     = { "gui": "#8F3F71", "cterm": "129" }
+let s:dark_purple     = { "gui": "#B16286", "cterm": "165" }
+let s:light_purple    = { "gui": "#D3869B", "cterm": "165" }
+let s:yellow          = { "gui": "#D79921", "cterm": "11"  }
+let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11" }
+let s:dark_yellow     = { "gui": "#D79921", "cterm": "3"   }
 
 let s:background = &background
 
@@ -53,9 +53,9 @@ if &background == "dark"
   let s:bg              = s:black
   let s:bg_subtle       = s:lighter_black
   let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
+  let s:norm            = s:cream
   let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
+  let s:purple          = s:dark_purple
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
   let s:red             = s:light_red
@@ -67,7 +67,7 @@ else
   let s:bg_very_subtle  = s:lightest_gray
   let s:norm            = s:light_black
   let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
+  let s:purple          = s:deep_purple
   let s:cyan            = s:dark_cyan
   let s:green           = s:dark_green
   let s:red             = s:dark_red
@@ -170,21 +170,21 @@ call s:h("SignColumn",    {"fg": s:light_green})
 if has("gui_running")
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
   call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
-  call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
+  call s:h("SpellRare",   {"gui": "underline", "sp": s:light_purple})
   call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
 else
   call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
   call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
+  call s:h("SpellRare",   {"cterm": "underline", "fg": s:light_purple})
   call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
 endif
 
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:purple})
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("PmenuSel",      {"fg": s:subtle_black, "bg": s:purple})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("TabLineSel",    {"fg": s:subtle_black, "bg": s:purple, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
@@ -200,11 +200,19 @@ call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
-" Synatastic
+" Syntastic
 call s:h("SyntasticWarningSign",    {"fg": s:yellow})
 call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold", "cterm": "bold"})
 call s:h("SyntasticErrorSign",      {"fg": s:red})
-call s:h("SyntasticError",          {"bg": s:red, "fg": s:white, "gui": "bold", "cterm": "bold"})
+call s:h("SyntasticError",          {"bg": s:red, "fg": s:cream, "gui": "bold", "cterm": "bold"})
+
+" which-key.nvim
+call s:h("WhichKey",                {"bg": s:bg, "fg": s:purple, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeyDesc",            {"bg": s:bg, "fg": s:norm_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeySeparator",       {"bg": s:bg, "fg": s:norm, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeyFloat",           {"bg": s:bg})
+
+hi link WhichKeyGroup WhichKey
 
 " Neomake
 hi link NeomakeWarningSign	SyntasticWarningSign
