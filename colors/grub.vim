@@ -17,10 +17,10 @@ endif
 
 let g:colors_name='grub'
 
-let s:black           = { "gui": "#0D0D0D", "cterm": "232" }
+let s:black           = { "gui": "#0D0D0D", "cterm": "234" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
-let s:cream           = { "gui": "#EBDBB2", "cterm": "8"   }
-let s:actual_white    = { "gui": "#EBDBB2", "cterm": "8"   }
+let s:cream           = { "gui": "#EBDBB2", "cterm": "187" }
+let s:actual_white    = { "gui": "#EBDBB2", "cterm": "187" }
 let s:subtle_black    = { "gui": "#121212", "cterm": "233" }
 let s:light_black     = { "gui": "#262626", "cterm": "235" }
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
@@ -41,16 +41,19 @@ let s:light_cyan      = { "gui": "#427B58", "cterm": "14"  }
 let s:dark_green      = { "gui": "#98971A", "cterm": "2"   }
 let s:light_green     = { "gui": "#98971A", "cterm": "10"  }
 let s:deep_purple     = { "gui": "#8F3F71", "cterm": "129" }
-let s:dark_purple     = { "gui": "#B16286", "cterm": "165" }
+let s:dark_purple     = { "gui": "#B16286", "cterm": "132" }
 let s:light_purple    = { "gui": "#D3869B", "cterm": "165" }
 let s:yellow          = { "gui": "#D79921", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11" }
+let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11"  }
 let s:dark_yellow     = { "gui": "#D79921", "cterm": "3"   }
+let s:dark_column     = { "gui": "#1C1C1C", "cterm": "234" }
+let s:light_column    = { "gui": "#C2B48F", "cterm": "144" }
 
 let s:background = &background
 
 if &background == "dark"
   let s:bg              = s:black
+  let s:bg_column       = s:dark_column
   let s:bg_subtle       = s:lighter_black
   let s:bg_very_subtle  = s:subtle_black
   let s:norm            = s:cream
@@ -63,6 +66,7 @@ if &background == "dark"
   let s:yellow          = s:light_yellow
 else
   let s:bg              = s:actual_white
+  let s:bg_column       = s:light_column
   let s:bg_subtle       = s:light_gray
   let s:bg_very_subtle  = s:lightest_gray
   let s:norm            = s:light_black
@@ -94,7 +98,7 @@ if &background != s:background
    execute "set background=" . s:background
 endif
 
-call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
+call s:h("Cursor",        {"bg": s:norm, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
 call s:h("Constant",      {"fg": s:purple})
@@ -128,7 +132,7 @@ hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-call s:h("Special",       {"fg": s:norm_subtle, "gui": "italic"})
+call s:h("Special",       {"fg": s:norm_subtle})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
@@ -188,7 +192,7 @@ call s:h("TabLineSel",    {"fg": s:subtle_black, "bg": s:purple, "gui": "bold", 
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
-call s:h("ColorColumn",   {"bg": s:bg_subtle})
+call s:h("ColorColumn",   {"bg": s:bg_column})
 
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
