@@ -5,7 +5,7 @@ A minimal gruvbox-based colorscheme for Vim.
 ## Installation
 
 Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"shiztev/vim-grub"`
+manager like [Plug][] or [Vundle][] and add `"salvrz/vim-grub"`
 as a plugin.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
