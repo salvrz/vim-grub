@@ -1,6 +1,6 @@
 " Name:       grub.vim
-" Version:    0.1.0
-" Maintainer: github.com/shiztev
+" Version:    0.1.1
+" Maintainer: github.com/salvrz
 " License:    The MIT License (MIT)
 "
 " A minimal gruvbox-based colorscheme for Vim.
@@ -17,37 +17,37 @@ endif
 
 let g:colors_name='grub'
 
-let s:black           = { "gui": "#0D0D0D", "cterm": "234" }
-let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
-let s:cream           = { "gui": "#EBDBB2", "cterm": "187" }
-let s:actual_white    = { "gui": "#EBDBB2", "cterm": "187" }
-let s:subtle_black    = { "gui": "#121212", "cterm": "233" }
-let s:light_black     = { "gui": "#262626", "cterm": "235" }
-let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
-let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
-let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
-let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:dark_pink       = { "gui": "#ff5f87", "cterm": "204" }
-let s:light_pink      = { "gui": "#d75f87", "cterm": "168" }
-let s:dark_red        = { "gui": "#CC241D", "cterm": "1"   }
-let s:light_red       = { "gui": "#FB4934", "cterm": "1"   }
-let s:orange          = { "gui": "#FE8019", "cterm": "167" }
-let s:darker_blue     = { "gui": "#076678", "cterm": "18"  }
-let s:dark_blue       = { "gui": "#076678", "cterm": "32"  }
-let s:blue            = { "gui": "#458588", "cterm": "12"  }
-let s:light_blue      = { "gui": "#83A598", "cterm": "153" }
-let s:dark_cyan       = { "gui": "#689D6A", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#427B58", "cterm": "14"  }
-let s:dark_green      = { "gui": "#98971A", "cterm": "2"   }
-let s:light_green     = { "gui": "#98971A", "cterm": "10"  }
-let s:deep_purple     = { "gui": "#8F3F71", "cterm": "129" }
-let s:dark_purple     = { "gui": "#B16286", "cterm": "132" }
-let s:light_purple    = { "gui": "#D3869B", "cterm": "165" }
-let s:yellow          = { "gui": "#D79921", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11"  }
-let s:dark_yellow     = { "gui": "#D79921", "cterm": "3"   }
-let s:dark_column     = { "gui": "#1C1C1C", "cterm": "234" }
-let s:light_column    = { "gui": "#C2B48F", "cterm": "144" }
+let s:black           = { "gui": "#0D0D0D", "cterm": "234" } "off-black"
+let s:medium_gray     = { "gui": "#767676", "cterm": "243" } "gray"
+let s:cream           = { "gui": "#EBDBB2", "cterm": "187" } "cream"
+let s:actual_white    = { "gui": "#EBDBB2", "cterm": "187" } "cream"
+let s:subtle_black    = { "gui": "#121212", "cterm": "233" } "off-black v2"
+let s:light_black     = { "gui": "#262626", "cterm": "235" } "dark gray"
+let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" } "gray"
+let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" } "gray"
+let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" } "light gray"
+let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" } "*light* gray"
+let s:dark_pink       = { "gui": "#ff5f87", "cterm": "204" } "pink"
+let s:light_pink      = { "gui": "#d75f87", "cterm": "168" } "darker pink"
+let s:dark_red        = { "gui": "#CC241D", "cterm": "1"   } "red"
+let s:light_red       = { "gui": "#FB4934", "cterm": "1"   } "blood orange"
+let s:orange          = { "gui": "#FE8019", "cterm": "167" } "orange"
+let s:darker_blue     = { "gui": "#076678", "cterm": "18"  } "dark blue"
+let s:dark_blue       = { "gui": "#076678", "cterm": "32"  } "dark blue"
+let s:blue            = { "gui": "#458588", "cterm": "12"  } "blue/teal"
+let s:light_blue      = { "gui": "#83A598", "cterm": "153" } "aqua/teal"
+let s:dark_cyan       = { "gui": "#689D6A", "cterm": "6"   } "green/aqua"
+let s:light_cyan      = { "gui": "#427B58", "cterm": "14"  } "darker green"
+let s:dark_green      = { "gui": "#98971A", "cterm": "2"   } "yellow-green"
+let s:light_green     = { "gui": "#98971A", "cterm": "10"  } "yellow-green"
+let s:deep_purple     = { "gui": "#8F3F71", "cterm": "129" } "dark purple"
+let s:dark_purple     = { "gui": "#B16286", "cterm": "132" } "light purple"
+let s:light_purple    = { "gui": "#D3869B", "cterm": "165" } "pinkish"
+let s:yellow          = { "gui": "#D79921", "cterm": "11"  } "darker pink"
+let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11"  } "yellow"
+let s:dark_yellow     = { "gui": "#D79921", "cterm": "3"   } "mustard"
+let s:dark_column     = { "gui": "#1C1C1C", "cterm": "234" } "off-black v3"
+let s:light_column    = { "gui": "#C2B48F", "cterm": "144" } "tan/dark cream"
 
 let s:background = &background
 
