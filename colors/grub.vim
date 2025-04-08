@@ -59,6 +59,7 @@ if &background == "dark"
   let s:bg_very_subtle  = s:subtle_black
   let s:norm            = s:cream
   let s:norm_subtle     = s:medium_gray
+  let s:text_subtle     = s:lighter_black
   let s:purple          = s:dark_purple
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
@@ -68,10 +69,11 @@ if &background == "dark"
 else
   let s:bg              = s:actual_white   "background"
   let s:bg_column       = s:light_column   "color column"
-  let s:bg_subtle       = s:dark_gray      "comments"
+  let s:bg_subtle       = s:lighter_black  "comments"
   let s:bg_very_subtle  = s:dark_cream     "cursor linenr bg"
   let s:norm            = s:light_black    "text"
   let s:norm_subtle     = s:lighter_black  "braces, lots of keywords and delineators"
+  let s:text_subtle     = s:dark_gray      "comments"
   let s:purple          = s:deep_purple    "constants, linenr"
   let s:cyan            = s:dark_cyan      "unused"
   let s:green           = s:dark_green     "diff add"
@@ -100,7 +102,7 @@ if &background != s:background
 endif
 
 call s:h("Cursor",        {"bg": s:norm, "fg": s:norm })
-call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
+call s:h("Comment",       {"fg": s:text_subtle, "gui": "italic"})
 
 call s:h("Constant",      {"fg": s:purple})
 hi! link Character        Constant
@@ -152,7 +154,7 @@ call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
 call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:bg_subtle})
+call s:h("LineNr",        {"fg": s:text_subtle})
 call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle, "gui": "bold"})
 call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_very_subtle})
@@ -160,11 +162,11 @@ call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
 call s:h("Title",         {"fg": s:dark_blue})
 call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
-call s:h("VisualNOS",     {"bg": s:bg_subtle})
+call s:h("VisualNOS",     {"bg": s:text_subtle})
 call s:h("WarningMsg",    {"fg": s:yellow})
 call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
 call s:h("Folded",        {"fg": s:medium_gray})
-call s:h("FoldColumn",    {"fg": s:bg_subtle})
+call s:h("FoldColumn",    {"fg": s:text_subtle})
 call s:h("DiffAdd",       {"fg": s:green})
 call s:h("DiffDelete",    {"fg": s:red})
 call s:h("DiffChange",    {"fg": s:dark_yellow})
