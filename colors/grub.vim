@@ -21,7 +21,7 @@ let s:black           = { "gui": "#0D0D0D", "cterm": "234" } "off-black"
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" } "gray"
 let s:dark_gray       = { "gui": "#282828", "cterm": "243" } "gray"
 let s:cream           = { "gui": "#EBDBB2", "cterm": "187" } "cream"
-let s:actual_white    = { "gui": "#F9F5D7", "cterm": "187" } "cream"
+let s:cream           = { "gui": "#F9F5D7", "cterm": "187" } "cream"
 let s:subtle_black    = { "gui": "#121212", "cterm": "233" } "off-black v2"
 let s:light_black     = { "gui": "#0A0A0A", "cterm": "235" } "dark gray"
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" } "gray"
@@ -60,6 +60,7 @@ if &background == "dark"
   let s:norm            = s:cream
   let s:norm_subtle     = s:medium_gray
   let s:text_subtle     = s:lighter_black
+  let s:text_alt_subtle = s:cream
   let s:purple          = s:dark_purple
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
@@ -67,13 +68,14 @@ if &background == "dark"
   let s:visual          = s:light_purple
   let s:yellow          = s:light_yellow
 else
-  let s:bg              = s:actual_white   "background"
+  let s:bg              = s:cream          "background"
   let s:bg_column       = s:light_column   "color column"
   let s:bg_subtle       = s:lighter_black  "comments"
   let s:bg_very_subtle  = s:dark_cream     "cursor linenr bg"
   let s:norm            = s:light_black    "text"
   let s:norm_subtle     = s:lighter_black  "braces, lots of keywords and delineators"
   let s:text_subtle     = s:dark_gray      "comments"
+  let s:text_alt_subtle = s:cream          "highlighted text (e.g. cursor on braces)"
   let s:purple          = s:deep_purple    "constants, linenr"
   let s:cyan            = s:dark_cyan      "unused"
   let s:green           = s:dark_green     "diff add"
@@ -144,7 +146,7 @@ hi! link Debug            Special
 
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
-call s:h("Error",         {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
+call s:h("Error",         {"fg": s:cream, "bg": s:red, "cterm": "bold"})
 call s:h("Todo",          {"fg": s:purple, "gui": "underline", "cterm": "underline"})
 call s:h("SpecialKey",    {"fg": s:light_green})
 call s:h("NonText",       {"fg": s:medium_gray})
@@ -188,8 +190,8 @@ endif
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("PmenuSel",      {"fg": s:subtle_black, "bg": s:purple})
-call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
+call s:h("PmenuSbar",     {"fg": s:text_alt_subtle, "bg": s:bg_subtle})
+call s:h("PmenuThumb",    {"fg": s:text_alt_subtle, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("TabLineSel",    {"fg": s:subtle_black, "bg": s:purple, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
@@ -197,7 +199,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_column})
 
-call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:text_alt_subtle})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
