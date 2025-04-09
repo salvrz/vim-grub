@@ -20,14 +20,15 @@ let g:colors_name='grub'
 let s:black           = { "gui": "#0D0D0D", "cterm": "234" } "off-black"
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" } "gray"
 let s:dark_gray       = { "gui": "#282828", "cterm": "243" } "gray"
-let s:cream           = { "gui": "#EBDBB2", "cterm": "187" } "cream"
 let s:cream           = { "gui": "#F9F5D7", "cterm": "187" } "cream"
+let s:gray_cream      = { "gui": "#928374", "cterm": "255" } "gray cream"
+let s:dark_cream      = { "gui": "#F2E5BC", "cterm": "255" } "dark cream"
 let s:subtle_black    = { "gui": "#121212", "cterm": "233" } "off-black v2"
 let s:light_black     = { "gui": "#0A0A0A", "cterm": "235" } "dark gray"
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" } "gray"
+let s:cream_gray      = { "gui": "#504945", "cterm": "239" } "cream gray"
 let s:light_gray      = { "gui": "#282828", "cterm": "248" } "gray"
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" } "light gray"
-let s:dark_cream      = { "gui": "#F2E5BC", "cterm": "255" } "dark cream"
 let s:dark_pink       = { "gui": "#ff5f87", "cterm": "204" } "pink"
 let s:light_pink      = { "gui": "#d75f87", "cterm": "168" } "darker pink"
 let s:dark_red        = { "gui": "#CC241D", "cterm": "1"   } "red"
@@ -67,14 +68,15 @@ if &background == "dark"
   let s:red             = s:light_red
   let s:visual          = s:light_purple
   let s:yellow          = s:light_yellow
+  let s:comment         = s:lighter_black
 else
   let s:bg              = s:cream          "background"
   let s:bg_column       = s:light_column   "color column"
-  let s:bg_subtle       = s:lighter_black  "comments"
+  let s:bg_subtle       = s:lighter_black  "matching delimiters (e.g. [], {}, ())"
   let s:bg_very_subtle  = s:dark_cream     "cursor linenr bg"
   let s:norm            = s:light_black    "text"
-  let s:norm_subtle     = s:lighter_black  "braces, lots of keywords and delineators"
-  let s:text_subtle     = s:dark_gray      "comments"
+  let s:norm_subtle     = s:cream_gray  "braces, lots of keywords and delineators"
+  let s:text_subtle     = s:dark_gray      "linenr, fold column"
   let s:text_alt_subtle = s:cream          "highlighted text (e.g. cursor on braces)"
   let s:purple          = s:deep_purple    "constants, linenr"
   let s:cyan            = s:dark_cyan      "unused"
@@ -82,6 +84,7 @@ else
   let s:red             = s:dark_red       "error, diff delete, spellbad"
   let s:visual          = s:dark_purple    "SAME"
   let s:yellow          = s:dark_yellow    "warning(? I think?)"
+  let s:comment         = s:gray_cream     "comments"
 endif
 
 " https://github.com/noahfrederick/vim-hemisu/
@@ -104,7 +107,7 @@ if &background != s:background
 endif
 
 call s:h("Cursor",        {"bg": s:norm, "fg": s:norm })
-call s:h("Comment",       {"fg": s:text_subtle, "gui": "italic"})
+call s:h("Comment",       {"fg": s:comment, "gui": "italic"})
 
 call s:h("Constant",      {"fg": s:purple})
 hi! link Character        Constant
