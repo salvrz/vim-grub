@@ -202,7 +202,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_column})
 
-call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:text_alt_subtle})
+call s:h("MatchParen",    {"bg": s:visual, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
