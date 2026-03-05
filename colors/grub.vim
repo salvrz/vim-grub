@@ -20,9 +20,9 @@ let g:colors_name='grub'
 let s:black           = { "gui": "#0D0D0D", "cterm": "234" } "off-black"
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" } "gray"
 let s:dark_gray       = { "gui": "#282828", "cterm": "243" } "gray"
-let s:cream           = { "gui": "#FBFBEF", "cterm": "187" } "cream"
+let s:cream           = { "gui": "#FCFCFC", "cterm": "187" } "cream"
 let s:gray_cream      = { "gui": "#928374", "cterm": "255" } "gray cream"
-let s:dark_cream      = { "gui": "#F0EED5", "cterm": "255" } "dark cream"
+let s:dark_cream      = { "gui": "#F1EFE2", "cterm": "255" } "dark cream"
 let s:subtle_black    = { "gui": "#121212", "cterm": "233" } "off-black v2"
 let s:light_black     = { "gui": "#0A0A0A", "cterm": "235" } "dark gray"
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" } "gray"
@@ -49,7 +49,7 @@ let s:yellow          = { "gui": "#D79921", "cterm": "11"  } "darker pink"
 let s:light_yellow    = { "gui": "#FABD2F", "cterm": "11"  } "yellow"
 let s:dark_yellow     = { "gui": "#D65D0E", "cterm": "3"   } "light orange"
 let s:dark_column     = { "gui": "#1C1C1C", "cterm": "234" } "off-black v3"
-let s:light_column    = { "gui": "#F0EED5", "cterm": "144" } "tan/dark cream"
+let s:light_column    = { "gui": "#F1EFE2", "cterm": "144" } "tan/dark cream"
 
 let s:background = &background
 
